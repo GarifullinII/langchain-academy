@@ -1,4 +1,5 @@
 import operator
+import wikipedia
 from typing import Annotated
 from typing_extensions import TypedDict
 
@@ -11,6 +12,11 @@ from langchain_tavily import TavilySearch  # updated 1.0
 from langchain_openai import ChatOpenAI
 
 from langgraph.graph import StateGraph, START, END
+
+
+wikipedia.set_user_agent(
+    "langchain-academy/1.0"
+)
 
 llm = ChatOpenAI(model="gpt-4o", temperature=0) 
 
